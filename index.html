@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diego Aprigio | Senior Software Engineer</title>
+    <meta
+      name="description"
+      content="Diego Aprigio is a senior software engineer in Florianópolis. Backend and cloud-native systems with Node.js, NestJS, TypeScript, and AWS."
+    />
+    <meta name="theme-color" content="#14110e" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content="Diego Aprigio | Senior Software Engineer" />
+    <meta
+      property="og:description"
+      content="Backend and cloud-native systems for product teams. Node.js, NestJS, TypeScript, and AWS."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://diegoaprigio-dev.vercel.app/" />
+    <meta property="og:image" content="https://diegoaprigio-dev.vercel.app/images/portrait.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="/images/portrait.jpg" />
+    <link rel="alternate" type="application/rss+xml" title="Diego Aprigio" href="/rss.xml" />
+    <script>
+      ;(function () {
+        try {
+          var saved = localStorage.getItem('theme')
+          var theme =
+            saved === 'light' || saved === 'dark'
+              ? saved
+              : window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'light'
+                : 'dark'
+          document.documentElement.setAttribute('data-theme', theme)
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

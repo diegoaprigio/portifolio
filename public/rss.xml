@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Diego Aprigio</title>
+    <link>https://diegoaprigio-dev.vercel.app</link>
+    <description>Notes on backend, cloud, and product engineering.</description>
+    <language>en</language>
+    <item>
+      <title>Rebuilding an R&amp;D tax platform on NestJS and ECS</title>
+      <link>https://diegoaprigio-dev.vercel.app/blog/rebuilding-an-rd-tax-platform</link>
+      <guid>https://diegoaprigio-dev.vercel.app/blog/rebuilding-an-rd-tax-platform</guid>
+      <pubDate>Tue, 18 Aug 2026 12:00:00 GMT</pubDate>
+      <category>Engineering</category>
+      <description>Users were stuck on a slow no-code tool. I planned the NestJS rebuild, put it on ECS, and turned U.S. R&amp;D credit rules into software the team could change.</description>
+    </item>
+    <item>
+      <title>Shipping a global drink-sharing campaign without a production incident</title>
+      <link>https://diegoaprigio-dev.vercel.app/blog/drink-sharing-campaign</link>
+      <guid>https://diegoaprigio-dev.vercel.app/blog/drink-sharing-campaign</guid>
+      <pubDate>Tue, 18 Nov 2025 12:00:00 GMT</pubDate>
+      <category>Cloud</category>
+      <description>A new web app had to be about 90% more efficient than the first version, then carry a three-month campaign. The same services also moved from AWS to Azure while dispensers stayed online.</description>
+    </item>
+    <item>
+      <title>PlayCheck: a round history operators can open</title>
+      <link>https://diegoaprigio-dev.vercel.app/blog/playcheck-round-history</link>
+      <guid>https://diegoaprigio-dev.vercel.app/blog/playcheck-round-history</guid>
+      <pubDate>Tue, 04 Jun 2024 12:00:00 GMT</pubDate>
+      <category>iGaming</category>
+      <description>The studio could store a spin and still fail a compliance question. PlayCheck reads the round from the server and draws it, so a reviewer sees the game instead of a row of numbers.</description>
+    </item>
+    <item>
+      <title>The week a device fleet became one screen</title>
+      <link>https://diegoaprigio-dev.vercel.app/blog/one-screen-for-a-device-fleet</link>
+      <guid>https://diegoaprigio-dev.vercel.app/blog/one-screen-for-a-device-fleet</guid>
+      <pubDate>Tue, 16 Jan 2024 12:00:00 GMT</pubDate>
+      <category>Product</category>
+      <description>IT asset data was already in the databases. Customers still could not see the fleet. The SaaS view changed that, and the job changed with it, from API tickets to technical lead.</description>
+    </item>
+  </channel>
+</rss>

@@ -217,12 +217,11 @@ strong { font-weight: 700; }
 @keyframes blink { 50% { opacity: 0; } }
 .hero h1 {
   font-size: clamp(4rem, 8vw, 6.6rem);
-  line-height: 0.9;
+  line-height: 1.16;
   letter-spacing: -0.045em;
   font-weight: 800;
   margin-bottom: 12px;
 }
-.hero h1 .gi { margin-left: 0.07em; letter-spacing: 0.03em; }
 .stack-line {
   min-height: 1.4em;
   margin: 8px 0 16px;

@@ -50,9 +50,7 @@ export function Hero() {
           <h1 aria-label="Diego Aprigio.">
             Diego
             <br />
-            <span className="accent">
-              Apri<span className="gi">g</span>io.
-            </span>
+            <span className="accent">Aprigio.</span>
           </h1>
           <p className="stack-line">
             <span className="sr-only">Core stack: </span>

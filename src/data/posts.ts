@@ -9,6 +9,8 @@ export type Post = {
   title: string
   excerpt: string
   category: 'Engineering' | 'Cloud' | 'iGaming' | 'Product'
+  image: string
+  imageAlt: string
   date: string
   blocks: Block[]
 }
@@ -22,6 +24,8 @@ export const posts: Post[] = [
     excerpt:
       'Users were stuck on a slow no-code tool. I planned the NestJS rebuild, put it on ECS, and turned U.S. R&D credit rules into software the team could change.',
     category: 'Engineering',
+    image: '/images/taxrobot.png',
+    imageAlt: 'TaxRobot sign-in and an R&D study screen with credit progress and active projects.',
     date: '2026-08-18',
     blocks: [
       {
@@ -77,6 +81,8 @@ export class StudiesModule {}`,
     excerpt:
       'A new web app had to be about 90% more efficient than the first version, then carry a three-month campaign. The same services also moved from AWS to Azure while dispensers stayed online.',
     category: 'Cloud',
+    image: '/images/dispenser-2.png',
+    imageAlt: 'Hand holding a phone in front of a dispenser that is getting ready to share a personalized drink.',
     date: '2025-11-18',
     blocks: [
       {
@@ -124,6 +130,8 @@ curl -fsS "$NEW_ORIGIN/ready"`,
     excerpt:
       'The studio could store a spin and still fail a compliance question. PlayCheck reads the round from the server and draws it, so a reviewer sees the game instead of a row of numbers.',
     category: 'iGaming',
+    image: '/images/ino-session.jpg',
+    imageAlt: 'Diego Aprigio reviewing a slot game on a laptop.',
     date: '2024-06-04',
     blocks: [
       {
@@ -167,6 +175,8 @@ public string Render(RoundView round, string template)
     excerpt:
       'IT asset data was already in the databases. Customers still could not see the fleet. The SaaS view changed that, and the job changed with it, from API tickets to technical lead.',
     category: 'Product',
+    image: '/images/itam.png',
+    imageAlt: 'Laptop showing an IT asset dashboard with fleet totals, memory bands, and departments.',
     date: '2024-01-16',
     blocks: [
       {

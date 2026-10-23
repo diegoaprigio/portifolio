@@ -6,24 +6,18 @@ import { formatDate, posts, readingTime } from '../data/posts'
 export function BlogPreview() {
   return (
     <section id="blog" className="section">
-      <div className="wrap section-head">
-        <div>
-          <p className="kicker">[ 05 ] Blog</p>
-          <h2>
-            Latest <span className="accent">posts.</span>
-          </h2>
-          <p className="sub">
-            Backend, cloud, and the decisions behind systems I have shipped.
-          </p>
-        </div>
-        <Link className="text-link" to="/blog">
-          See all posts <span aria-hidden="true">→</span>
-        </Link>
-      </div>
       <div className="wrap">
-        <DragScroll>
-          {posts.map((post) => (
-            <article key={post.slug} className="post-card">
+        <p className="kicker">[ 05 ] Blog</p>
+        <h2>
+          Latest <span className="accent">posts.</span>
+        </h2>
+        <p className="sub">Backend, cloud, and the decisions behind systems I have shipped.</p>
+      </div>
+      <DragScroll>
+        {posts.map((post) => (
+          <article key={post.slug} className="post-card">
+            <img className="post-cover" src={post.image} alt={post.imageAlt} />
+            <div className="post-body">
               <p className="post-meta">
                 <span>{post.category}</span>
                 <span>{formatDate(post.date)}</span>
@@ -36,10 +30,19 @@ export function BlogPreview() {
               <Link className="text-link" to={`/blog/${post.slug}`}>
                 Continue reading <span aria-hidden="true">→</span>
               </Link>
-            </article>
-          ))}
-        </DragScroll>
-        <p className="hint">Drag or scroll</p>
+            </div>
+          </article>
+        ))}
+      </DragScroll>
+      <div className="blog-actions">
+        <p className="drag-hint">
+          <span aria-hidden="true">‹</span>
+          Drag or scroll
+          <span aria-hidden="true">›</span>
+        </p>
+        <Link className="see-all" to="/blog">
+          See all posts <span aria-hidden="true">→</span>
+        </Link>
       </div>
     </section>
   )
@@ -82,16 +85,24 @@ function DragScroll({ children }: { children: ReactNode }) {
       event.stopPropagation()
       moved = false
     }
+    const wheel = (event: WheelEvent) => {
+      if (element.scrollWidth <= element.clientWidth) return
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return
+      event.preventDefault()
+      element.scrollLeft += event.deltaY
+    }
 
     element.addEventListener('pointerdown', down)
     window.addEventListener('pointermove', move)
     window.addEventListener('pointerup', up)
     element.addEventListener('click', click, true)
+    element.addEventListener('wheel', wheel, { passive: false })
     return () => {
       element.removeEventListener('pointerdown', down)
       window.removeEventListener('pointermove', move)
       window.removeEventListener('pointerup', up)
       element.removeEventListener('click', click, true)
+      element.removeEventListener('wheel', wheel)
     }
   }, [])
 
@@ -102,8 +113,8 @@ function DragScroll({ children }: { children: ReactNode }) {
       tabIndex={0}
       aria-label="Latest posts"
       onKeyDown={(event) => {
-        if (event.key === 'ArrowRight') ref.current?.scrollBy({ left: 360, behavior: 'smooth' })
-        if (event.key === 'ArrowLeft') ref.current?.scrollBy({ left: -360, behavior: 'smooth' })
+        if (event.key === 'ArrowRight') ref.current?.scrollBy({ left: 380, behavior: 'smooth' })
+        if (event.key === 'ArrowLeft') ref.current?.scrollBy({ left: -380, behavior: 'smooth' })
       }}
     >
       {children}

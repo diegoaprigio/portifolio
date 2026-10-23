@@ -222,7 +222,7 @@ strong { font-weight: 700; }
   font-weight: 800;
   margin-bottom: 12px;
 }
-.hero h1 .gi { letter-spacing: 0.045em; }
+.hero h1 .gi { margin-left: 0.07em; letter-spacing: 0.03em; }
 .stack-line {
   min-height: 1.4em;
   margin: 8px 0 16px;
@@ -664,16 +664,49 @@ blockquote footer { margin: 12px 0 0; }
 .section-head h2 { margin-bottom: 8px; }
 .hscroll {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   overflow-x: auto;
-  padding: 8px 0 16px;
+  padding: 8px max(20px, calc((100% - 1120px) / 2)) 4px;
+  scroll-padding-inline: max(20px, calc((100% - 1120px) / 2));
   scroll-snap-type: x mandatory;
   cursor: grab;
+  scrollbar-width: none;
 }
+.hscroll::-webkit-scrollbar { display: none; }
 .hscroll.dragging { cursor: grabbing; user-select: none; scroll-snap-type: none; }
 .hscroll:focus-visible { outline-offset: 6px; }
+.blog-actions {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+.drag-hint {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.drag-hint span { color: var(--accent); letter-spacing: 0; font-size: 1rem; }
+.see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-2) 70%, transparent);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 650;
+}
+.see-all:hover { border-color: var(--accent); color: var(--accent); }
 .post-card, .archive-list article {
-  flex: 0 0 min(340px, 82vw);
+  flex: 0 0 clamp(280px, 34vw, 400px);
   scroll-snap-align: start;
   background: var(--bg-2);
   border: 1px solid var(--line);
@@ -682,6 +715,10 @@ blockquote footer { margin: 12px 0 0; }
   display: flex;
   flex-direction: column;
 }
+.hscroll .post-card { padding: 0 0 18px; overflow: hidden; }
+.post-cover { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #1a1612; }
+.post-body { display: flex; flex-direction: column; gap: 8px; flex: 1; padding: 16px 18px 0; }
+.hscroll .post-card .text-link { color: var(--accent); margin-top: auto; padding-top: 8px; }
 .post-card h3 a, .archive-list h2 a { text-decoration: none; }
 .post-card p, .archive-list p { color: var(--muted); }
 .post-meta { display: flex; flex-wrap: wrap; gap: 10px; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.75rem; margin-bottom: 10px; }
